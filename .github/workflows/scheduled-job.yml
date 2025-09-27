@@ -28,3 +28,12 @@ jobs:
 
             - name: Run tests
               run: npm test
+
+            - name: Build React App
+              run: bum run build
+
+            - name: Upload Build Artifacts  
+              uses: actions/upload-artifact@v4
+              with:
+                name: react-build
+                path: dist
